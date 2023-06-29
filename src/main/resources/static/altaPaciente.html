@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script type="text/javascript" src="/js/post_paciente.js"></script> -->
 </head>
 
-<body >
-    <div class="container"  style="background-color:#f4feff">
+<body>
+    <div class="container" style="background-color:#f4feff">
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <!-- <a class="nav-link" href="/pacienteList.html">Listar Pacientes</a> -->
             </li>
         </ul>
         <div class="row">
-          <div class="col s12 m8 offset-m2" style=" padding:10px; border-radius:3px">
+            <div class="col s12 m8 offset-m2" style="padding:10px; border-radius:3px">
                 <h3 class="center-align">Agregar Paciente</h3>
                 <form id="add_new_generica" class="row">
 
@@ -30,7 +31,8 @@
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" id="apellido" placeholder="Ingrese el apellido" name="apellido" required>
+                        <input type="text" id="apellido" placeholder="Ingrese el apellido" name="apellido"
+                            required>
                         <label for="apellido">Apellido:</label>
                     </div>
 
@@ -61,17 +63,20 @@
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" id="localidad" placeholder="Ingrese la localidad" name="localidad" required>
+                        <input type="text" id="localidad" placeholder="Ingrese la localidad" name="localidad"
+                            required>
                         <label for="localidad">Localidad:</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" id="provincia" placeholder="Ingrese la Provincia" name="provincia" required>
+                        <input type="text" id="provincia" placeholder="Ingrese la Provincia" name="provincia"
+                            required>
                         <label for="provincia">Provincia:</label>
                     </div>
 
                     <div class="col s12 center-align">
-                        <button class="btn btn-danger" id="btn-alta-generica" onclick="altaPaciente()">Guardar</button>
+                        <button class="btn btn-danger" id="btn-alta-generica" onclick="altaPaciente()">Guardar
+                        </button>
                     </div>
 
                 </form>
@@ -82,10 +87,14 @@
 
     <script>
         $(document).ready(function () {
-            $('.datepicker').datepicker({
-                format: 'yyyy-mm-dd'
+            var datepicker = $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy',
+                autoClose: true
             });
+
+            
         });
+        $('#fechaAlta').mask('00/00/0000');
     </script>
     <!-- <script src="js/odontologos.js"></script> -->
     <script src="js/pacientes.js"></script>
