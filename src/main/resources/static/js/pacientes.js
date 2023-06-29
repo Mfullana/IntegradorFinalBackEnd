@@ -15,7 +15,7 @@ function altaGenerico() {
             nombre: document.getElementById("nombre").value,
             apellido: document.getElementById("apellido").value,
             dni: document.getElementById("dni").value,
-            fechaAlta: document.getElementById("fechaAlta").value,
+            fechaAlta: document.getElementById("fechaAlta").value.format("YYYY-MM-DD"), //Probar si el format arregla el post
             calle:document.getElementById("calle").value,
             numero:document.getElementById("numero").value,
             localidad:document.getElementById("localidad").value,
