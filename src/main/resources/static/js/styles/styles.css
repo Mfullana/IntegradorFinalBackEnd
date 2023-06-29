@@ -172,3 +172,9 @@ border-radius: 4px;
 }
 
 
+
+.mdc-button,.mdc-top-app-bar {
+    /*Leve recolor de Material para que sea menos feo*/
+    background-color: #649fcf !important; 
+    color: #fff; 
+}
