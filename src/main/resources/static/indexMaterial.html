@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.css">
+    <link rel="stylesheet" href="js/styles/styles.css"/>
+    <style>
+        .mdc-floating-label--float-above {
+            transform: translateY(-1.5em) scale(0.75);
+        }
+    </style>
+    <title>Centro Odontológico</title>
+</head>
+<body class="mdc-typography">
+
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <span class="mdc-top-app-bar__title">Centro Odontológico</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <span class="material-icons">account_circle</span>
+                <span class="mdc-top-app-bar__title">Usuario</span>
+            </section>
+        </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+        <section class="mdc-card">
+            <h3 class="mdc-typography--headline6">Pacientes</h3>
+            <button class="mdc-button mdc-button--raised" id="Listado-pac">Listado de pacientes</button>
+            <button class="mdc-button mdc-button--raised" id="nuevo-pac" onclick="altaPaciente()">Nuevo Paciente</button>
+            <button class="mdc-button mdc-button--raised" id="actualizar-pac">Actualizar Paciente</button>
+            <form id="formEliminar">
+                <div class="mdc-text-field">
+                    <input type="text" id="idEliminarPac" class="mdc-text-field__input" placeholder=" ">
+                    <label for="idEliminarPac" class="mdc-floating-label">Eliminar por ID</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <button class="mdc-button mdc-button--raised" type="submit">Eliminar</button>
+            </form>
+        </section>
+
+        <section class="mdc-card">
+            <h3 class="mdc-typography--headline6">Odontólogos</h3>
+            <button class="mdc-button mdc-button--raised" id="listado-odon" onclick="obtenerOdontologos()">Listado de Odontólogos</button>
+            <button class="mdc-button mdc-button--raised" id="nuevo-odon" onclick="altaOdontologo()">Nuevo Odontólogo</button>
+            <button class="mdc-button mdc-button--raised" id="actualizar-odon">Actualizar Odontólogo</button>
+            <form id="form-eliminar">
+                <div class="mdc-text-field">
+                    <input type="text" id="idEliminarOdon" class="mdc-text-field__input" placeholder=" ">
+                    <label for="idEliminarOdon" class="mdc-floating-label">Eliminar por ID</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <button class="mdc-button mdc-button--raised" type="submit">Eliminar</button>
+            </form>
+        </section>
+
+        <section class="mdc-card">
+            <h3 class="mdc-typography--headline6">Turnos</h3>
+            <button class="mdc-button mdc-button--raised" id="listado-turnos">Listado de Turnos</button>
+            <button class="mdc-button mdc-button--raised" id="nuevo-turno" onclick="altaTurno()">Nuevo Turno</button>
+            <button class="mdc-button mdc-button--raised" id="actualizar-turno">Actualizar Turno</button>
+            <form id="form_elimi">
+                <div class="mdc-text-field">
+                    <input type="text" id="id_eliminar" class="mdc-text-field__input" placeholder=" ">
+                    <label for="id_eliminar" class="mdc-floating-label">Eliminar por ID</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <button class="mdc-button mdc-button--raised" type="submit">Eliminar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.js"></script>
+    <script src="js/odontologos.js"></script>
+    <script src="js/pacientes.js"></script>
+    <script src="js/turnos.js"></script>
+    <script>
+        const inputFields = document.querySelectorAll('.mdc-text-field__input');
+
+        inputFields.forEach((input) => {
+            input.addEventListener('input', (event) => {
+                const label = event.target.parentNode.querySelector('.mdc-floating-label');
+                if (event.target.value === '') {
+                    label.classList.remove('mdc-floating-label--float-above');
+                } else {
+                    label.classList.add('mdc-floating-label--float-above');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

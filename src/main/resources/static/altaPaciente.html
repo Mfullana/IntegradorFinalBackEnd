@@ -1,90 +1,96 @@
 <!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="es">
 
 <head>
-  <title>Alta Paciente</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <!-- <script type="text/javascript" src="/js/post_paciente.js"></script> -->
+    <title>Alta Paciente</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/post_paciente.js"></script> -->
 </head>
 
-<body>
-<div class="container">
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <!--                <a class="nav-link" href="/pacienteList.html">Listar Pacientes</a>-->
-    </li>
-  </ul>
-  <div class="row">
-    <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
-      <h3>Agregar Paciente</h3>
-      <form id="add_new_generica">
-        <div class="form-group">
-          <label class="control-label" for="nombre">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre"
-                 name="nombre" required></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="apellido">Apellido:</label>
-          <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido"
-                 name="apellido" required></input>
-        </div>
-          <div class="form-group">
-          <label class="control-label" for="dni">DNI:</label>
-          <input type="text" class="form-control" id="dni" placeholder="Ingrese el DNI"
-                 name="dni" required></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="fechaAlta">Fecha Alta:</label>
-          <input type="text" class="form-control" id="fechaAlta" placeholder="Fecha Alta"
-                 name="fechaAlta" required></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="id">ID:</label>
-          <input type="text" class="form-control" id="id" placeholder="Ingrese el ID"
-                 name="id" required></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="calle">Calle:</label>
-          <input type="text" class="form-control" id="calle" placeholder="Ingrese la calle"
-                 name="calle" required></input>
-        </div>
+<body >
+    <div class="container"  style="background-color:#f4feff">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="/pacienteList.html">Listar Pacientes</a> -->
+            </li>
+        </ul>
+        <div class="row">
+          <div class="col s12 m8 offset-m2" style=" padding:10px; border-radius:3px">
+                <h3 class="center-align">Agregar Paciente</h3>
+                <form id="add_new_generica" class="row">
 
-        <div class="form-group">
-            <label class="control-label" for="numero">Numero:</label>
-            <input type="text" class="form-control" id="numero" placeholder="Ingrese el Numero"
-                   name="numero" required></input>
+                    <div class="input-field col s12">
+                        <input type="text" id="nombre" placeholder="Ingrese el nombre" name="nombre" required>
+                        <label for="nombre">Nombre:</label>
+                    </div>
 
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="localidad">Localidad:</label>
-          <input type="text" class="form-control" id="localidad" placeholder="Ingrese la localidad"
-                 name="localidad" required></input>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="provincia">Provincia:</label>
-          <input type="text" class="form-control" id="provincia" placeholder="Ingrese la Provincia"
-                 name="provincia" required></input>
-        </div>
+                    <div class="input-field col s12">
+                        <input type="text" id="apellido" placeholder="Ingrese el apellido" name="apellido" required>
+                        <label for="apellido">Apellido:</label>
+                    </div>
 
-        <button class="btn btn-danger " id="btn-alta-generica"
-                onclick="altaPaciente()">Guardar</button>
-      </form>
-      <!-- <div id="response" style="display:none; margin-top:10px"> -->
+                    <div class="input-field col s12">
+                        <input type="text" id="dni" placeholder="Ingrese el DNI" name="dni" required>
+                        <label for="dni">DNI:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="fechaAlta" class="datepicker" placeholder="Fecha Alta"
+                            name="fechaAlta" required>
+                        <label for="fechaAlta">Fecha Alta:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="id" placeholder="Ingrese el ID" name="id" required>
+                        <label for="id">ID:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="calle" placeholder="Ingrese la calle" name="calle" required>
+                        <label for="calle">Calle:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="numero" placeholder="Ingrese el Numero" name="numero" required>
+                        <label for="numero">Numero:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="localidad" placeholder="Ingrese la localidad" name="localidad" required>
+                        <label for="localidad">Localidad:</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="text" id="provincia" placeholder="Ingrese la Provincia" name="provincia" required>
+                        <label for="provincia">Provincia:</label>
+                    </div>
+
+                    <div class="col s12 center-align">
+                        <button class="btn btn-danger" id="btn-alta-generica" onclick="altaPaciente()">Guardar</button>
+                    </div>
+
+                </form>
+                <!-- <div id="response" style="display:none; margin-top:10px"> -->
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
-<!--<script src="js/odontologos.js"></script>-->
+
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+    <!-- <script src="js/odontologos.js"></script> -->
     <script src="js/pacientes.js"></script>
-<!--    <script src="js/turnos.js"></script>-->
+    <!-- <script src="js/turnos.js"></script> -->
 
 </body>
 
 </html>
-

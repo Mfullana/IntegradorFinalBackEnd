@@ -31,7 +31,7 @@ public class Paciente {
     @NotNull(message ="El apellido del paciente no debe ser nulo" )
     private String apellido;
 
-//    @Pattern(regexp = "\\d", message = "El campo DNI solo admite caracteres numericos")
+    //@Pattern(regexp = "\\d", message = "El campo DNI solo admite caracteres numericos")
     @Length(max = 12)
     @NotBlank(message = "Debe especificar el DNI del paciente")
     private String dni;
@@ -41,18 +41,15 @@ public class Paciente {
     @NotNull(message = "Debe especificar la fecha de ingreso del paciente")
     private LocalDate fechaIngreso;
 
-
     //Relacion de UN Paciente tienen UN Domicilio
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name="domicilio_id", referencedColumnName = "id",nullable = false)
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id", nullable = true)
     private Domicilio domicilio;
-
 
     //Relacion de UN paciente tiene MUCHOS turnos
     @OneToMany(mappedBy = "paciente")
     @JsonIgnore
     private Set<Turno> turnos;
-
 
     // Constructores
     public Paciente(String nombre, String apellido, String dni, LocalDate fechaIngreso) {
@@ -64,8 +61,4 @@ public class Paciente {
 
     public Paciente() {
     }
-
-
-
-
 }
