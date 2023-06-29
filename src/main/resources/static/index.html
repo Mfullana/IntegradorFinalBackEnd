@@ -4,16 +4,16 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="js\styles\styles.css"/>
-    <title>Centro Odontologico</title>
+    <link rel="stylesheet" href="js/styles/styles.css"/>
+    <title>Centro Odontológico</title>
 </head>
 <body>
 
     <nav>
-        <h2>Centro Odontologico</h2>
+        <h2>Centro Odontológico</h2>
     <ul>
         <li>Usuario</li>
-        <li><img src=js/styles/user.png> </li>
+        <li><img src="js/styles/user.png"></li>
     </ul>
     </nav>
     <main>
@@ -31,37 +31,41 @@
                     <button type="submit">Eliminar</button>
                 </form>
             </div>
-    </article>
-    <article class="odontologos">
-        <div>
-            <h3>Odontologos</h3>
-            <button type="submit" id="listado-odon">Listado de Odontologos</button>
-            <button type="submit" id="nuevo-odon">Nuevo Odontologo</button>
-            <button type="submit" id="actualizar-odon">Actualizar Odontologo</button>
-            <form id="form-eliminar">
-                <label>
-                    <input type="text" id="idEliminarOdon" placeholder="Eliminar por ID"/>
-                </label>
-                <button type="submit">Eliminar</button>
-            </form>
-        </div>
-    </article>
-    <article class="turnos">
-        <div>
-            <h3>Turnos</h3>
-            <button type="submit" id="listado-turnos">Listado de Turnos</button>
-            <button type="submit" id="ts">Turnos Semanales</button>
-            <button type="submit" id="nuevo-turno">Nuevo Turno</button>
-            <button type="submit" id="actualizar-turno">Actualizar Turno</button>
-            <form id="form_elimi">
-                <label>
-                    <input type="text" id="id_eliminar" placeholder="Eliminar por ID"/>
-                </label>
-                <button type="submit">Eliminar</button>
-            </form>
-        </div>
-    </article>
+        </article>
+        <article class="odontologos">
+            <div>
+                <h3>Odontólogos</h3>
+                <button type="submit" id="listado-odon" onclick="obtenerOdontologos()">Listado de Odontólogos</button>
+                <button type="submit" id="nuevo-odon" onclick ="altaOdontologo()">Nuevo Odontólogo</button>
+                <button type="submit" id="actualizar-odon">Actualizar Odontólogo</button>
+                <form id="form-eliminar">
+                    <label>
+                        <input type="text" id="idEliminarOdon" placeholder="Eliminar por ID"/>
+                    </label>
+                    <button type="submit">Eliminar</button>
+                </form>
+            </div>
+        </article>
+        <article class="turnos">
+            <div>
+                <h3>Turnos</h3>
+                <button type="submit" id="listado-turnos">Listado de Turnos</button>
+                <button type="submit" id="ts">Turnos Semanales</button>
+                <button type="submit" id="nuevo-turno">Nuevo Turno</button>
+                <button type="submit" id="actualizar-turno">Actualizar Turno</button>
+                <form id="form_elimi">
+                    <label>
+                        <input type="text" id="id_eliminar" placeholder="Eliminar por ID"/>
+                    </label>
+                    <button type="submit">Eliminar</button>
+                </form>
+            </div>
+        </article>
     </section>
-</main>
+    </main>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/odontologos.js"></script>
+    <script src="js/pacientes.js"></script>
+    <script src="js/turnos.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
-package com.IntegradorFinal.controllers.impl;
+package com.IntegradorFinal.controllers;
 
-import com.IntegradorFinal.controllers.ControllerInterface;
 import com.IntegradorFinal.exceptions.BadRequestException;
 import com.IntegradorFinal.exceptions.ResourceNotFoundException;
 import com.IntegradorFinal.dto.OdontologoDTO;
@@ -16,12 +15,11 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/odontologos")
-public class OdontologoController implements ControllerInterface<OdontologoDTO> {
+public class OdontologoController {
 
     @Autowired(required = true)
     OdontologoService service;
 
-    @Override
     @PostMapping("/crear")
     public ResponseEntity<OdontologoDTO> crearEnBDD(@RequestBody OdontologoDTO odontologo) {
         ResponseEntity<OdontologoDTO> respuesta = ResponseEntity.badRequest().body(odontologo);
@@ -33,20 +31,17 @@ public class OdontologoController implements ControllerInterface<OdontologoDTO> 
 
     }
 
-    @Override
     @GetMapping("/todos")
     public ResponseEntity<List<OdontologoDTO>> consultarTodos() throws ResourceNotFoundException
     {
         return ResponseEntity.ok(service.obtenerTodos());
     }
 
-    @Override
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminarDeBDD(@PathVariable Integer id) throws ResourceNotFoundException {
         return ResponseEntity.ok(service.eliminar(id));
     }
 
-    @Override
     @PutMapping("/actualizar")
     public ResponseEntity<String> actualizarEnBDD(@Valid @RequestBody OdontologoDTO odontologo) throws BadRequestException, ResourceNotFoundException {
         ResponseEntity<String> respuesta;

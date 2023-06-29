@@ -1,6 +1,5 @@
-package com.IntegradorFinal.controllers.impl;
+package com.IntegradorFinal.controllers;
 
-import com.IntegradorFinal.controllers.ControllerInterface;
 import com.IntegradorFinal.exceptions.BadRequestException;
 import com.IntegradorFinal.exceptions.ResourceNotFoundException;
 import com.IntegradorFinal.dto.TurnoDTO;
@@ -15,30 +14,26 @@ import javax.validation.Valid;
 @RestController
 @CrossOrigin
 @RequestMapping("/turnos")
-public class TurnoController implements ControllerInterface<TurnoDTO> {
+public class TurnoController   {
 
     @Autowired(required = true)
     TurnoService service;
 
-    @Override
     @PostMapping("/crear")
     public ResponseEntity<?> crearEnBDD(@Valid @RequestBody TurnoDTO turnoDTO) throws BadRequestException, ResourceNotFoundException {
         return ResponseEntity.ok(service.insertar(turnoDTO));
     }
 
-    @Override
     @GetMapping("/todos")
     public ResponseEntity<?> consultarTodos() throws ResourceNotFoundException {
         return ResponseEntity.ok(service.obtenerTodos());
     }
 
-    @Override
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarDeBDD(@PathVariable Integer id) throws ResourceNotFoundException {
         return ResponseEntity.ok(service.eliminar(id));
     }
 
-    @Override
     @PutMapping("/actualizar")
     public ResponseEntity<?> actualizarEnBDD(@Valid @RequestBody TurnoDTO turnoDTO) throws ResourceNotFoundException, BadRequestException{
         return ResponseEntity.ok(service.actualizar(turnoDTO));
