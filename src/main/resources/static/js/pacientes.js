@@ -1,5 +1,5 @@
 function altaPaciente() {
-    window.open("altaPaciente.html", "width=400,height=400,left=100,top=100");
+    window.open("altaPaciente.html", "popup","width=400,height=940,left=200,top=100");
 }
 function altaGenerico() {
 

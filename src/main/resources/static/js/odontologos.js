@@ -1,5 +1,8 @@
 function altaOdontologo() {
-    window.open("altaOdontologo.html", "width=400,height=400,left=100,top=100");
+    //window.open("altaOdontologo.html", "popup", "width=500,height=500,left=200,top=200");
+    //Make this popup open with 100% of its content height + 30px
+    window.open("altaOdontologo.html", "popup", "width=500,height=450,left=200,top=200");
+    
 }
 
 //function altaPaciente() {

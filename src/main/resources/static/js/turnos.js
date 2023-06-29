@@ -1,5 +1,5 @@
 function altaTurno() {
-    window.open("altaTurno.html", "width=400,height=400,left=100,top=100");
+    window.open("altaTurno.html", "popup", "width=400,height=930,left=200,top=100");
 }
 function altaGenerico() {
 
