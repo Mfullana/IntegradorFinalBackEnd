@@ -24,7 +24,7 @@ Para la instalación de Java y Maven se recomienda la siguiente documentación:
 
 ## Iniciar sesión:
 
-Una vez que el proyecto esta corriendo, dirigirse a la url [http://localhost:8080/login](http://localhost:8080/login) y logearse con el siguiente usuario y contraseña (el mismo tiene acceso de ADMIN, por lo que podrá acceder a todas las funcionalidades del sistema):
+Una vez que el proyecto esta corriendo, dirigirse a la url [http://localhost:8080/](http://localhost:8080/) y logearse con el siguiente usuario y contraseña (el mismo tiene acceso de ADMIN, por lo que podrá acceder a todas las funcionalidades del sistema):
 - Usuario --> admin@digital.com
 - Contraseña --> admin
 
