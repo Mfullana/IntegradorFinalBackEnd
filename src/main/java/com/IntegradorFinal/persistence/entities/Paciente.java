@@ -43,8 +43,8 @@ public class Paciente {
 
 
     //Relacion de UN Paciente tienen UN Domicilio
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name="domicilio_id", referencedColumnName = "id",nullable = false)
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id", nullable = true)
     private Domicilio domicilio;
 
 
