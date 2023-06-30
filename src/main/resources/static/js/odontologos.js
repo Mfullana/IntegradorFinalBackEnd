@@ -12,13 +12,13 @@ function altaOdontologo() {
 
 /*Se le puso el prevent default para poder dejar los datos cargados sin que vuelva a cargar la pagina, y poder debugear con la consola, 
 se puede probar sin el preventDefault ahora que esta arreglado el Post*/
-//var boton = document.getElementById("btn-alta-generica");
-//
-//boton.addEventListener("click", function (event) {
-//    {
-//        event.preventDefault();
-//    }
-//});
+var boton = document.getElementById("eliminarOdon");
+
+boton.addEventListener("click", function (event) {
+    {
+        event.preventDefault();
+    }
+});
 
 
 function altaGenerico() {
@@ -54,35 +54,36 @@ function altaGenerico() {
         });
 
 }
-//function obtenerOdontologos() {
-//    //Este funciona y fue probado, trae en consola los odontologos que se encuentran dados de alta
-//    const url = 'http://localhost:8080/odontologos/todos';
-//    const settings = {
-//        method: 'GET'
+function obtenerOdontologos() {
+    //Este funciona y fue probado, trae en consola los odontologos que se encuentran dados de alta
+    const url = 'http://localhost:8080/odontologos/todos';
+    const settings = {
+        method: 'GET'
+
+    };
+
+    fetch(url, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
 //
-//    };
-//
-//    fetch(url, settings)
-//        .then(response => response.json())
-//        .then(data => {
-//            console.log(data);
-//        })
-//        .catch(error => {
-//            console.error('Error:', error);
-//        });
-//}
-//
-//function eliminarOdontologo() {
-//
-//    const url = 'http://localhost:8080/odontologos/eliminar';
-//    let id = parseInt(document.getElementById("idEliminarOdon").value)
-//    const settings = {
-//        method: 'DELETE',
-//        body: JSON.stringify({id: id}),
-//        headers: {'Content-Type': 'application/json'}
-//    }
-//    fetch(url, settings)
-//        .then(response => response.json())
-//        .then(data => {console.log(data);})
-//        .catch(error => {console.error('Error:', error);});
-//}
+function eliminarOdontologo() {
+
+    const url = 'http://localhost:8080/odontologos/eliminar';
+    let id = parseInt(document.getElementById("idEliminarOdon").value)
+    let parameter = url+"/"+id
+    const settings = {
+        method: 'DELETE',
+
+        headers: {'Content-Type': 'application/json'}
+    }
+    fetch(parameter, settings)
+        .then(response => response.json())
+        .then(data => {console.log(data);})
+        .catch(error => {console.error('Error:', error);});
+}

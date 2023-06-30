@@ -25,7 +25,10 @@
                            required>
                     <label for="fecha">Fecha:</label>
                 </div>
-
+                <div class="input-field col s12">
+                    <input type="text" id="idPaciente" placeholder="ID del Paciente" name="idPaciente" required>
+                    <label for="IdPaciente">Id Paciente:</label>
+                </div>
                 <div class="input-field col s12">
                     <input type="text" id="nombre" placeholder="Ingrese el nombre" name="nombre" required>
                     <label for="nombre">Nombre:</label>
@@ -66,9 +69,25 @@
                     <input type="text" id="provincia" placeholder="Ingrese la Provincia" name="provincia" required>
                     <label for="provincia">Provincia:</label>
                 </div>
+                <div class="input-field col s12">
+                    <input type="text" id="idOdontologo" placeholder="ID del Odontologo" name="idOdontologo" required>
+                    <label for="IdOdontologo">Id Odontologo:</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="nombreOdon" placeholder="Ingrese el nombre" name="nombreOdon" required>
+                    <label for="nombreOdon">Nombre:</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="apellidoOdon" placeholder="Ingrese el Apellido" name="apellidoOdon" required>
+                    <label for="apellidoOdon">Apellido:</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="matricula" placeholder="Ingrese la Matricula" name="matricula" required>
+                    <label for="matricula">Matricula:</label>
+                </div>
 
                 <div class="col s12 center-align" style="margin-top: 10px;">
-                    <button class="btn waves-effect waves-light" id="btn-alta-generica" onclick="altaTurno()">
+                    <button class="btn waves-effect waves-light" id="btn-alta-generica" onclick="altaGenerico()">
                         Guardar
                     </button>
                 </div>
@@ -80,21 +99,12 @@
 </div>
 <!--<script src="js/odontologos.js"></script>-->
 <!--<script src="js/pacientes.js"></script>-->
-<script src="js/turnos.js"></script>
+
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var datepickers = document.querySelectorAll('.datepicker');
-        M.Datepicker.init(datepickers, {
-            autoClose: true,
-            format: 'dd/mm/yyyy'
-        });
-    });
 
-    $('#fechaAlta').mask('00/00/0000');
-    $('#fecha').mask('00/00/0000');
 </script>
-
+    <script src="js/turnos.js"></script>
 </body>
 
 </html>

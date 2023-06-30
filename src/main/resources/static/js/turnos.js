@@ -1,3 +1,24 @@
+var boton = document.getElementById("btn-alta-generica");
+
+document.addEventListener('DOMContentLoaded', function () {
+    var datepickers = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(datepickers, {
+        autoClose: true,
+        format: 'yyyy-mm-dd' // Actualiza el formato al deseado (ISO 8601)
+    });
+
+});
+
+$('#fechaAlta').mask('00/00/0000');
+$('#fecha').mask('00/00/0000');
+
+boton.addEventListener("click", function (event) {
+ console.log ("hola")
+    {
+        event.preventDefault();
+    }
+});
+
 function altaTurno() {
     window.open("altaTurno.html", "popup", "width=400,height=930,left=200,top=100");
 }
@@ -6,14 +27,21 @@ function altaGenerico() {
     /*Esta funcion es para hacer el alta, funciona y fue probada*/
     console.log('Intentando hacer el alta de ' + document.getElementById("nombre").value + ' ' + document.getElementById("apellido").value)
     //Aqui tomo el mismo Endpoint que aparece en el Swagger//
-    const url = 'http://localhost:8080/pacientes/crear';
+    const url = 'http://localhost:8080/turnos/crear';
+var fechaInput = document.getElementById('fecha');
 
-    let id = parseInt(document.getElementById("id").value)
+        var fechaSeleccionada = new Date(fechaInput.value);
+        var fechaTurno = fechaSeleccionada.toISOString();
+//    let fechaTurno = document.getElementById("fecha").value
+        /*format yyyy-mm-dd*/
+//        fechaTurno = fechaTurno.substring(6, 10) + '-' + fechaTurno.substring(3, 5) + '-' + fechaTurno.substring(0, 2)
+  //  let fechaTurnoFormateada = fechaTurno.toISOString();
     const settings = {
         method: 'POST',
         body: JSON.stringify({
-            fecha: document.getElementById("fecha").value,
+               fecha: fechaTurno,
             paciente: {
+                id: document.getElementById("idPaciente").value,
                 nombre: document.getElementById("nombre").value,
                 apellido: document.getElementById("apellido").value,
                 dni: document.getElementById("dni").value,
@@ -25,6 +53,7 @@ function altaGenerico() {
                 }
             },
             odontologo: {
+                id: document.getElementById("idOdontologo").value,
                 nombre: document.getElementById("nombreOdon").value,
                 apellido: document.getElementById("apellidoOdon").value,
                 matricula: document.getElementById("matricula").value
@@ -35,7 +64,7 @@ function altaGenerico() {
             'Content-Type': 'application/json'
         }
     }
-
+    console.log(settings)
     console.log('Alta de ' + document.getElementById("nombre").value + ' ' + document.getElementById("apellido").value + ' exitosa')
     //Aca usa el url y la configuracion armada arriba para enviar el post al servidor
     fetch(url, settings)
@@ -48,39 +77,6 @@ function altaGenerico() {
         });
 
 }
-
-
-////borrar el turno buscado
-//
-//let botonBorrar = document.querySelector("#idEliminar");
-//botonBorrar.addEventListener('click', (e)=>{
-//let config = {
-//method : "DELETE",
-//headers: {
-//'Content-Type': 'application/json'
-//
-//},
-//body :""
-//}
-//fetch('http://localhost:8080/turnos/eliminar/${info.id}', config)
-//.them((respuesta)=>{
-//    if(respuesta.status === 204){
-//        resultado.innerHTML = '<div class="exito">
-//                                    <h4>Eliminado con exito!</h4>
-//                                 <div>';
-//        listadoTurnos.innerHTML = "";
-//        }
-//})
-//.them((info)=> console.log(info))
-//.catch((error)) => console.log(error))
-//})
-//})
-//.catch((error) => console.log(error))
-//})
-//{)
-//.catch((error)=> console.log(error))
-//})
-//})
 
 /*Automatically set getdate() on fecha when page loads or refreshes*/
 window.onload = function () {
@@ -95,7 +91,7 @@ window.onload = function () {
         mm = '0' + mm
 
     }
-    fecha = yyyy + '-' + mm + '-' + dd;
+    fecha = dd + '/' + mm + '/' + yyyy;
     document.getElementById("fechaAlta").setAttribute("value", fecha);
     document.getElementById("fechaAlta").setAttribute("disabled", "true");
 
