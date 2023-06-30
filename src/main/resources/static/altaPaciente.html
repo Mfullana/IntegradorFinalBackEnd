@@ -42,17 +42,12 @@
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" id="fechaAlta" class="datepicker" placeholder="Fecha Alta"
-                            name="fechaAlta" required>
-                        <label for="fechaAlta">Fecha Alta:</label>
+                        <input type="text" id="fechaIngreso" class="datepicker" placeholder="Fecha Ingreso"
+                            name="fechaIngreso" required>
+                        <label for="fechaIngreso">Fecha Alta:</label>
                     </div>
 
-                    <div class="input-field col s12">
-                        <input type="text" id="id" placeholder="Ingrese el ID" name="id" required>
-                        <label for="id">ID:</label>
-                    </div>
-
-                    <div class="input-field col s12">
+                     <div class="input-field col s12">
                         <input type="text" id="calle" placeholder="Ingrese la calle" name="calle" required>
                         <label for="calle">Calle:</label>
                     </div>
@@ -75,7 +70,7 @@
                     </div>
 
                     <div class="col s12 center-align">
-                        <button class="btn btn-danger" id="btn-alta-generica" onclick="altaPaciente()">Guardar
+                        <button class="btn btn-danger" id="btn-alta-generica" onclick="altaPacientePost()">Guardar
                         </button>
                     </div>
 
@@ -88,13 +83,13 @@
     <script>
         $(document).ready(function () {
             var datepicker = $('.datepicker').datepicker({
-                format: 'dd/mm/yyyy',
+                format: 'yyyy-mm-dd',
                 autoClose: true
             });
 
             
         });
-        $('#fechaAlta').mask('00/00/0000');
+        $('#fechaIngreso').mask('0000-00-00');
     </script>
     <!-- <script src="js/odontologos.js"></script> -->
     <script src="js/pacientes.js"></script>
