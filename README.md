@@ -18,9 +18,14 @@ Para la instalación de Java y Maven se recomienda la siguiente documentación:
 ## Primer uso
 1) Clonar este repositorio. Para esto, correr el siguiente comando en la teminal de tu computadora:
 ```
-
+git clone https://github.com/Mfullana/IntegradorFinalBackEnd/
 ```
+2) Una vez clonado el repositorio, abrir el proyecto en un IDE (Eclipse, IntelliJ, etc) y esperar a que se descarguen las dependencias necesarias para correr el proyecto.
 
+3) Una vez que se descargaron las dependencias, correr el proyecto. Para esto, se puede correr el siguiente comando en la terminal del IDE:
+```
+mvn spring-boot:run
+```
 
 ## Iniciar sesión:
 
@@ -31,4 +36,9 @@ Una vez que el proyecto esta corriendo, dirigirse a la url [http://localhost:808
 ## Documentación 
 
 Luego de haberse logueado, se puede accederse a la url [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) y ver la documentación del proyecto.
+
+
+## Autores
+- [Marcelo Fullana]
+- [Erick Ramirez]
 
