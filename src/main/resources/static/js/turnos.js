@@ -12,15 +12,23 @@ function altaGenerico() {
     const settings = {
         method: 'POST',
         body: JSON.stringify({
-            nombre: document.getElementById("nombre").value,
-            apellido: document.getElementById("apellido").value,
-            dni: document.getElementById("dni").value,
-            fechaAlta: document.getElementById("fechaAlta").value.format("YYYY-MM-DD"), //Probar si el format arregla el post,
-            calle:document.getElementById("calle").value,
-            numero:document.getElementById("numero").value,
-            localidad:document.getElementById("localidad").value,
-            provincia:document.getElementById("provincia").value,
-
+            fecha: document.getElementById("fecha").value,
+            paciente: {
+                nombre: document.getElementById("nombre").value,
+                apellido: document.getElementById("apellido").value,
+                dni: document.getElementById("dni").value,
+                domicilio: {
+                    calle: document.getElementById("calle").value,
+                    numero: document.getElementById("numero").value,
+                    localidad: document.getElementById("localidad").value,
+                    provincia: document.getElementById("provincia").value
+                }
+            },
+            odontologo: {
+                nombre: document.getElementById("nombreOdon").value,
+                apellido: document.getElementById("apellidoOdon").value,
+                matricula: document.getElementById("matricula").value
+            }
         }),
         //Importante agregarle el header para que tome el post
         headers: {
@@ -73,3 +81,22 @@ function altaGenerico() {
 //.catch((error)=> console.log(error))
 //})
 //})
+
+/*Automatically set getdate() on fecha when page loads or refreshes*/
+window.onload = function () {
+    var fecha = new Date();
+    var dd = fecha.getDate();
+    var mm = fecha.getMonth() + 1;
+    var yyyy = fecha.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+
+    }
+    fecha = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("fechaAlta").setAttribute("value", fecha);
+    document.getElementById("fechaAlta").setAttribute("disabled", "true");
+
+}
